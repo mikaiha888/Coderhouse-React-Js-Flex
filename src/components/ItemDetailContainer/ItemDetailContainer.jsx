@@ -1,28 +1,35 @@
 import "./ItemDetailContainer.css";
-import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import { getProductById } from '../../asyncMock' 
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { getDoc } from "firebase/firestore";
+import { db } from "../../services/firebaseConfig";
 
-import ItemDetail from '../ItemDetail/ItemDetail'
+import ItemDetail from "../ItemDetail/ItemDetail";
 
 const ItemDetailContainer = () => {
-    const [product, setProduct] = useState(null)
+  const { id } = useParams();
+  const [product, setProduct] = useState(null);
 
-    const { itemId } = useParams()
+  useEffect(() => {
+    const productRef = doc(db, "products", id);
+    
+    getDoc(productRef)
+      .then((snapshot) => {
+        const data = snapshot.data();
+        const productFormatted = { id: snapshot.id, ...data };
+        setProduct(productFormatted);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 
-    useEffect(() => {
-        getProductById(itemId)
-            .then(response => {
-                setProduct(response)
-            })
-            .catch(error => {
-                console.error(error);
-            }) 
-    }, [itemId])
+    // getProductById(id).then(res => setProducto(res))
+  }, [id]);
+
   return (
-    <div className='ItemDetailContainer'>
-        <ItemDetail {...product} />
+    <div className="ItemDetailContainer">
+      <ItemDetail {...product} />
     </div>
-  )
-}
-export default ItemDetailContainer
+  );
+};
+export default ItemDetailContainer;
