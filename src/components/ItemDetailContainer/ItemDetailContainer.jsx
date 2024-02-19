@@ -1,7 +1,7 @@
 import "./ItemDetailContainer.css";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getDoc } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../services/firebaseConfig";
 
 import ItemDetail from "../ItemDetail/ItemDetail";
@@ -12,23 +12,21 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     const productRef = doc(db, "products", id);
-    
-    getDoc(productRef)
-      .then((snapshot) => {
-        const data = snapshot.data();
-        const productFormatted = { id: snapshot.id, ...data };
+    const fetchData = async () => {
+      try {
+        const snapshot = await getDoc(productRef);
+        const productFormatted = { id: snapshot.id, ...snapshot.data() };
         setProduct(productFormatted);
-      })
-      .catch((err) => {
+      } catch (error) {
         console.log(err);
-      });
-
-    // getProductById(id).then(res => setProducto(res))
+      }
+    };
+    fetchData()
   }, [id]);
 
   return (
     <div className="ItemDetailContainer">
-      <ItemDetail {...product} />
+      <ItemDetail product={product} />
     </div>
   );
 };

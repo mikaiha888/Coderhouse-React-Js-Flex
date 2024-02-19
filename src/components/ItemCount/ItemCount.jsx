@@ -1,8 +1,16 @@
 import "./ItemCount.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CartContext } from "../../Context/CartContext";
 
-const ItemCount = ({ initial, stock, onAdd }) => {
-  const [quantity, setQuantity] = useState(initial);
+const ItemCount = ({ stock, product }) => {
+  const [quantity, setQuantity] = useState(1);
+
+  const { addItem } = useContext(CartContext);
+
+  const handleAddToCart = () => {
+    const newItem = {...product, quantity: quantity}
+    addItem(newItem, quantity)
+  };
 
   const handleIncrement = () => {
     if (quantity < stock) {
@@ -24,7 +32,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
             <button className="Button" onClick={handleIncrement}>+</button>
         </div>
         <div>
-            <button className="Button" onClick={() => onAdd(quantity)} disabled={!stock} >
+            <button className="Button" onClick={() => handleAddToCart(quantity)} disabled={!stock} >
                 Agregar al carrito
             </button>
         </div>

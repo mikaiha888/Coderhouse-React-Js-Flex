@@ -21,8 +21,6 @@ const ItemListContainer = ({ greeting }) => {
         
         const snapshot = await getDocs(productRef);
 
-        console.log(snapshot.docs);
-
         const productsFormatted = snapshot.docs.map((doc) => {
           const data = doc.data();
           return { id: doc.id, ...data };
