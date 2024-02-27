@@ -10,20 +10,30 @@ const ItemDetail = ({ product }) => {
   return (
     <>
       {product && (
-        <div className="ItemDetail">
-          <img src={product.img} alt={product.name} />
-          <h3>{product.name}</h3>
-          <p>Categoría: {product.category}</p>
-          <p>Precio: ${product.price}</p>
-          <p>Stock disponible: {product.stock}</p>
-          <p>Descripción: {product.description}</p>
-          <ItemCount stock={product.stock} product={product} />
-          {isInCart(product.id) && (
-            <Link to="/cart">
-              <button>Ir al Carrito</button>
-            </Link>
-          )}
-        </div>
+        <>
+          <div className="product-img">
+            <img src={product.img} alt={product.name} />
+          </div>
+          <div className="product-content">
+            <span><Link to="/products">products</Link> / <Link to="/products/escritorios">{product.category}</Link></span>
+            <h3>{product.name}</h3>
+            <h4>${product.price}</h4>
+            <h4>Descripción</h4>
+            <hr />
+            <p>{product.description}</p>
+            {product.stock <= 10 && product.stock > 1 && (
+              <span>Quedan {product.stock} unidades disponibles</span>
+            )}
+            {product.stock === 1 && <p>¡Última unidad disponible!</p>}
+            {isInCart(product.id) ? (
+              <Link to="/cart">
+                <button>Ir al Carrito</button>
+              </Link>
+            ) : (
+              <ItemCount stock={product.stock} product={product} />
+            )}
+          </div>
+        </>
       )}
     </>
   );

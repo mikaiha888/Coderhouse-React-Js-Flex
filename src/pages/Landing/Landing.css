@@ -1,0 +1,64 @@
+.landing {
+    width: calc(100vw - (100vw - 100%));
+    margin: auto;
+    font-family: "Montserrat", sans-serif;
+}
+
+.landing .row {
+    height: 819px;
+    padding: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.col-1 {
+    min-width: 300px;
+    flex-basis: 45%;
+}
+
+.col-1 h2 {
+    font-size: 4rem;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    line-height: 6rem;
+}
+.col-1 h2 span {
+    color: rgb(235, 94, 0);
+}
+
+.col-1 p {
+    margin: 50px 0;
+    font-size: 1.25rem;
+    line-height: 2rem;
+}
+
+.col-1 button {
+    padding: 1rem 2rem;
+    border: none;
+    color: white;
+    background: #131313;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.col-1 button:hover {
+    background: rgb(235, 94, 0);
+    transition: .25s ease;
+}
+
+.col-2 {
+    text-align: center;
+    flex-basis: 35%;
+}
+
+.col-2 img {
+    min-width: 600px;
+    max-width: 100%;
+}
+
+.landing hr {
+    border: solid 10rem #131313;
+}

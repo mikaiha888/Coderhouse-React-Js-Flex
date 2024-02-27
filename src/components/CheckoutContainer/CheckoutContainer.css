@@ -1,0 +1,52 @@
+.checkout-container {
+    padding: 3.5rem 4rem;
+    margin: 12rem 0 5rem 0;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+    flex-basis: 25%;
+}
+
+.checkout-container h2 {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.checkout-container hr {
+    margin: 1.5rem 0 2rem 0;
+}
+
+.total-content div {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+}
+
+.checkout-button {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    border: none;
+    color: white;
+    background: #131313;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.checkout-button:hover {
+    border: none;
+    background: rgb(235, 94, 0);
+    transition: 0.2s ease-in;
+}
+
+.checkout-clear-button {
+    width: 50%;
+    margin: 1rem auto;
+    color: rgb(235, 94, 0);
+    font-size: .75rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+}

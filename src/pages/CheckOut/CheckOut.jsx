@@ -1,12 +1,13 @@
+import "./CheckOut.css";
 import { useState, useContext } from "react";
-import { CartContext } from "../Context/CartContext";
+import { CartContext } from "../../Context/CartContext";
 import { Navigate } from "react-router-dom";
-import { db } from "../services/firebaseConfig";
+import { db } from "../../services/firebaseConfig";
 import { addDoc, collection, doc, getDoc, updateDoc } from "firebase/firestore";
 
-import Form from "../components/Form/Form";
+import Form from "../../components/Form/Form";
 
-const CheckOut = () => {
+const CheckOut = ({ myElementRef }) => {
   const { cart, clearCart, getTotal } = useContext(CartContext);
   const [orderId, setOrderId] = useState(null);
   const [userData, setUserData] = useState({
@@ -56,22 +57,25 @@ const CheckOut = () => {
   };
 
   return (
-    <>
-      {orderId && (
-        <div>
-          <h3>Tu orden se generó correctamente</h3>
+    <div className="checkout" ref={myElementRef}>
+      {orderId ? (
+        <div className="checkout-confirmed">
+          <h3>Tu orden se generó <span>correctamente</span></h3>
           <p>
-            Guardá el número de orden <strong>{orderId}</strong>
+            Guardá tu número de orden <strong>{orderId}</strong>
           </p>
         </div>
+      ) : (
+        <>
+          <h2>Checkout</h2>
+          <Form
+            onSubmit={handleSubmit}
+            onChange={handleChange}
+            userData={userData}
+          />
+        </>
       )}
-      {cart.length === 0 && <Navigate to={"/"} />}
-      <Form
-        onSubmit={handleSubmit}
-        onChange={handleChange}
-        userData={userData}
-      />
-    </>
+    </div>
   );
 };
 export default CheckOut;

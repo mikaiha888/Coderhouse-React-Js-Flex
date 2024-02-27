@@ -7,7 +7,7 @@ import { db } from "../../services/firebaseConfig";
 
 import ItemList from "../ItemList/ItemList";
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = ({ greeting, myElementRef }) => {
   const { category } = useParams();
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
@@ -42,7 +42,7 @@ const ItemListContainer = ({ greeting }) => {
   }, [category]);
 
   return (
-    <div className="ItemListContainer">
+    <div ref={myElementRef} className="ItemListContainer">
       <h2>{greeting}</h2>
       {loading ? <div>Cargando..... </div> : <ItemList products={products} />}
     </div>

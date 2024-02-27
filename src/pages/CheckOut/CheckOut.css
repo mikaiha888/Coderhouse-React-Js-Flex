@@ -1,0 +1,84 @@
+.checkout {
+    width: 80vw;
+    padding: 5rem;
+    margin: 5rem;
+    background-color: #eeeeee;
+    text-align: center;
+}
+
+.checkout h2 {
+    margin-bottom: 3rem;
+    color: #131313;
+    font-size: 2rem;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+.checkout form div {
+    width: 40%;
+    margin: auto;
+}
+
+.checkout input {
+    width: 100%;
+    padding: .75rem;
+    margin: 1rem 0;
+    border: none;
+    font-size: 1rem ;
+}
+
+.checkout form p {
+    color: rgb(158, 6, 6);
+    text-align: left;
+}
+
+.disabled-button {
+    width: 40%;
+    padding: 1rem;
+    margin: 3rem auto 0 auto;
+    border: none;
+    color: rgb(112, 112, 112);
+    background: rgb(182, 182, 182);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.submit-button {
+    width: 40%;
+    padding: 1rem;
+    margin: 3rem auto 0 auto;
+    border: none;
+    color: white;
+    background: #131313;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.submit-button:hover {
+    border: none;
+    background: rgb(235, 94, 0);
+    transition: 0.2s ease-in;
+}
+
+.checkout-confirmed h3 {
+    width: 50%;
+    margin: 2rem auto;
+    font-size: 2rem;
+    line-height: 3rem;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+.checkout-confirmed span {
+    color: rgb(235, 94, 0);
+}
+
+.checkout-confirmed p {
+    font-weight: 500
+}

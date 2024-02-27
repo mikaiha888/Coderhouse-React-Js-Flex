@@ -1,6 +1,7 @@
 .ItemDetailContainer {
-    width: 80%;
+    max-width: 1600px;
     padding: 2rem 5rem;
-    margin: auto;
-    text-align: center;
+    margin: 4rem auto;
+    display: flex;
+    justify-content: space-between;
 }

@@ -1,0 +1,37 @@
+.cart-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.flex {
+    margin-right: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex1 {
+    flex-basis: 40%;
+}
+
+.flex2 {
+    text-align: center;
+    flex-basis: 10%;
+}
+
+.flex3 {
+    text-align: center;
+    flex-basis: 10%;
+}
+
+.flex4 {
+    text-align: center;
+    flex-basis: 15%;
+}
+
+.flex5 {
+    text-align: center;
+    flex-basis: 5%;
+}

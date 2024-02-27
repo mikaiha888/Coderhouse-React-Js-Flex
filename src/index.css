@@ -4,3 +4,13 @@
   box-sizing: border-box;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
+
+.container {
+  width: calc(100vw - (100vw - 100%));
+}
+
+a, button {
+  color: #131313;
+  text-decoration: none;
+  cursor: pointer;
+}

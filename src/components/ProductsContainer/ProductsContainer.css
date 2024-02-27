@@ -1,0 +1,33 @@
+.products-container {
+    flex-basis: 60%;
+}
+
+.products-container h2 {
+    margin: 5rem 0;
+    color: #131313;
+    font-size: 2rem;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+.products-container hr {
+    margin: 1rem 0;
+}
+
+.products-container ul li {
+    color: #808080;
+    list-style: none;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.empty-cart {
+    margin: 5rem;
+    color: #808080;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+}

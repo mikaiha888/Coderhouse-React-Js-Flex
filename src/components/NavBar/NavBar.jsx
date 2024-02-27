@@ -1,21 +1,27 @@
 import "./NavBar.css";
 import CartWidget from "../CartWidget/CartWidget";
+import UserLogo from "../UserLogo/UserLogo";
 
-import { Link, NavLink } from "react-router-dom";
+import logo from "../../assets/sodesk-logo-black.svg"
+
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <nav className="NavBar">
-      <Link to='/'>
-        <h1>BinX</h1>
+    <nav className="navbar">
+      <Link to='/'  className="logo">
+        <img src={logo} alt="sodesk-logo" />
       </Link>
-      <div className="Links">
-        <NavLink to={'/category/escritorios'} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}>Escritorios</NavLink>
-        <NavLink to={'/category/mesas'} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}>Mesas</NavLink>
-        <NavLink to={'/category/sillas'} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}>Sillas</NavLink>
-        <NavLink to={'/category/accesorios'} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}>Accesorios</NavLink>
+      <ul>
+        <li><Link to="/category/escritorios">Escritorios</Link></li>
+        <li><Link to="/category/mesas">Mesas</Link></li>
+        <li><Link to="/category/sillas">Sillas</Link></li>
+        <li><Link to="/category/accesorios">Accesorios</Link></li>
+      </ul>
+      <div className="icons">
+        <CartWidget />
+        <UserLogo />
       </div>
-      <CartWidget />
     </nav>
   );
 };

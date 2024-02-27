@@ -8,8 +8,8 @@ const ItemCount = ({ stock, product }) => {
   const { addItem } = useContext(CartContext);
 
   const handleAddToCart = () => {
-    const newItem = {...product, quantity: quantity}
-    addItem(newItem, quantity)
+    const newItem = { ...product, quantity: quantity };
+    addItem(newItem, quantity);
   };
 
   const handleIncrement = () => {
@@ -25,18 +25,18 @@ const ItemCount = ({ stock, product }) => {
   };
 
   return (
-    <div className="Counter">
-        <div className="Controls">
-            <button className="Button" onClick={handleDecrement}>-</button>
-            <h4 className="Quantity">{quantity}</h4>
-            <button className="Button" onClick={handleIncrement}>+</button>
+    <div className="counter">
+      <div className="counter-quantity">
+        <span>{quantity}</span>
+        <div className="counter-buttons">
+          <button onClick={handleIncrement}>+</button>
+          <button onClick={handleDecrement}>-</button>
         </div>
-        <div>
-            <button className="Button" onClick={() => handleAddToCart(quantity)} disabled={!stock} >
-                Agregar al carrito
-            </button>
-        </div>
+      </div>
+      <button className="add-to-cart" onClick={() => handleAddToCart(quantity)} disabled={!stock}>
+        Agregar al carrito
+      </button>
     </div>
-    )
+  );
 };
 export default ItemCount;

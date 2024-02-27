@@ -1,34 +1,48 @@
-.Counter {
-    width: 30%;
-    margin: 1.5rem auto;
-    display: flex;
+.counter {
     font-size: 1.5rem;
     font-weight: 500;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0 8rem;
+    display: flex;
+    justify-content: space-between;
 }
 
-.Button {
-    width: 100%;
-    padding: 2rem 5rem;
-    margin: 1.5rem auto;
-    border: none;
-    border-radius: 1rem;
-    font-size: 1rem;
-    font-weight: 500;
-}
-
-.Button:active {
-    background-color: rgb(226, 226, 226);
-}
-
-.Controls {
+.counter-quantity {
     display: flex;
 }
 
-.Controls h4 {
-    padding: 2rem 5rem;
-    line-height: 1.5rem;
+.counter-quantity span {
+    padding: 1rem;
+    font-size: 1.75rem;
 }
+
+.counter-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.counter-buttons button {
+    padding: .75rem;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.add-to-cart {
+    padding: 1rem;
+    border: none;
+    color: white;
+    background: #131313;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    flex-basis: 80%;
+}
+
+.add-to-cart:hover {
+    border: none;
+    background: rgb(235, 94, 0);
+    transition: 0.2s ease-in;
+}
+
