@@ -6,15 +6,16 @@
 
 .product-content {
     max-width: 600px;
+    margin-top: .5rem;
 }
 
 .product-content h3 {
-    margin-top: 2rem;
+    margin-top: 1rem;
     font-size: 3rem;
 }
 
 .product-content h4 {
-    margin: 4rem 0 1.5rem 0;
+    margin: 2.5rem 0 1.5rem 0;
     font-size: 1.75rem;
 }
 
@@ -37,4 +38,19 @@
 .ItemDetail a:hover {
     color: #ebac24;
     transition: 0.2s ease-in;
+}
+
+
+.to-cart {
+    width: 100%;
+    padding: 1.5rem;
+    border: none;
+    color: white;
+    background: rgb(235, 94, 0);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    flex-basis: 80%;
 }

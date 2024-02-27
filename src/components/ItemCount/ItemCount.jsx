@@ -27,13 +27,15 @@ const ItemCount = ({ stock, product }) => {
   return (
     <div className="counter">
       <div className="counter-quantity">
+        <button onClick={handleDecrement}>-</button>
         <span>{quantity}</span>
-        <div className="counter-buttons">
-          <button onClick={handleIncrement}>+</button>
-          <button onClick={handleDecrement}>-</button>
-        </div>
+        <button onClick={handleIncrement}>+</button>
       </div>
-      <button className="add-to-cart" onClick={() => handleAddToCart(quantity)} disabled={!stock}>
+      <button
+        className="add-to-cart"
+        onClick={() => handleAddToCart(quantity)}
+        disabled={!stock}
+      >
         Agregar al carrito
       </button>
     </div>

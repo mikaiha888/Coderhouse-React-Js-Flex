@@ -27,7 +27,7 @@ const ItemDetail = ({ product }) => {
             {product.stock === 1 && <p>¡Última unidad disponible!</p>}
             {isInCart(product.id) ? (
               <Link to="/cart">
-                <button>Ir al Carrito</button>
+                <button className="to-cart">Ir al Carrito</button>
               </Link>
             ) : (
               <ItemCount stock={product.stock} product={product} />
